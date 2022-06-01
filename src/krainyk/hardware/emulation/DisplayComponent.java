@@ -8,7 +8,7 @@ import java.util.Random;
 public class DisplayComponent extends JPanel {
     public static int IMAGE_SIZE = 128;
     private BufferedImage imageForDisplay = new BufferedImage(128, 128, BufferedImage.TYPE_USHORT_565_RGB);
-    private DisplayController displayController = new DisplayController(this);
+    //private DisplayController displayController = new DisplayController(this);
     private int pointx = 0, pointy = 0;
 
     public DisplayComponent() {
