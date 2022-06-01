@@ -10,7 +10,7 @@ import java.net.Socket;
 
 public class DisplayEmulator extends JFrame {
 
-    private JPanel mainPanel;
+    private JPanel mainPanel = new JPanel();
     private JLabel initStatusLabel;
     private ServerSocket serverSocket;
     private Socket clientSocket;
