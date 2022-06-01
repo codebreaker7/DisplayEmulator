@@ -8,7 +8,7 @@ import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class DisplayEmulator {
+public class DisplayEmulator extends JFrame {
 
     private JPanel mainPanel;
     private JLabel initStatusLabel;
@@ -17,6 +17,8 @@ public class DisplayEmulator {
     private DisplayComponent displayComponent = new DisplayComponent();
 
     public DisplayEmulator() throws IOException {
+        this.setContentPane(mainPanel);
+        this.setPreferredSize(new Dimension(300, 300));
         mainPanel.add(displayComponent);
         mainPanel.setPreferredSize(new Dimension(300, 300));
         serverSocket = new ServerSocket(55555);
@@ -47,8 +49,8 @@ public class DisplayEmulator {
     }
 
     public static void main(String[] args) throws IOException {
-        JFrame frame = new JFrame("DisplayEmulator");
-        frame.setContentPane(new DisplayEmulator().mainPanel);
+        JFrame frame = new DisplayEmulator();
+        //frame.setContentPane(new DisplayEmulator().mainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
